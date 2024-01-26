@@ -7,7 +7,7 @@ export class TodoController {
 
     @Post()
     async create(@Body() createTodo:any) {
-        return createTodo
+        return this.todoService.create(createTodo)
     }
 
 }
