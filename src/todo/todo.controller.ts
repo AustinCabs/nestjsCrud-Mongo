@@ -12,23 +12,23 @@ export class TodoController {
     }
 
     @Put(':id')
-    async update(@Param() id: string, @Body(new ValidationPipe) updateTodo: CreateTodoDto
+    async update(@Param('id') id: string, @Body(new ValidationPipe) updateTodo: CreateTodoDto
     ) {
         return this.todoService.update(id, updateTodo)
     }
 
     @Delete(':id')
-    async delete(@Param() id: string) {
-        return this.delete(id)
+    async delete(@Param('id') id: string) {
+        return this.todoService.delete(id)
     }
 
     @Get(':id')
-    async findById(@Param() id: string) {
-        return this.findById(id)
+    async findById(@Param('id') id: string) {
+        return this.todoService.findById(id)
     }
-    
+
     @Get()
     async findAll() {
-        return this.findAll()
+        return this.todoService.findAll()
     }
 }
